@@ -2,8 +2,8 @@
 
 Disciplina: Segurança de Aplicações (DevSecOps)  
 Professor: Walter Lopes  
-Aluno: (preencha seu nome aqui)  
-Data: (dd/mm/aaaa)
+Aluno: (Juan Gabriel da Costa Melo)  
+Data: (26/11/2025)
 
 ---
 
@@ -23,9 +23,9 @@ Data: (dd/mm/aaaa)
 ## 2. Ambiente Utilizado
 
 - Instância do OWASP Juice Shop:
-  - URL: (anotar aqui a instância indicada pelo professor)
+  - URL: https://expert-zebra-v9qp4qv59xq3pxpx-3000.app.github.dev/user#/search
 - Navegador utilizado:
-  - (ex.: Chrome, Firefox, Edge…)
+  - Opera
 - Ferramentas auxiliares (se usar):
   - (ex.: DevTools, extensões, proxies, etc.)
 
@@ -37,27 +37,30 @@ Preencha uma subseção para cada vulnerabilidade.
 
 ### 3.1 Vulnerabilidade #1
 
-- Endpoint / funcionalidade:
-- Como foi descoberta:
-- Categoria OWASP:
-- Payload / passo a passo (resumo, sem expor segredos reais):
-- Impacto (para o negócio / usuários):
-- Possíveis mitigações:
+- Endpoint / funcionalidade: Criação de uma review de um produto
+- Como foi descoberta: Inspecionando o elemento da página o OWASP Juice Shop
+- Categoria OWASP: A01
+- Payload / passo a passo (resumo, sem expor segredos reais): Criar uma review de um produto qualquer, copiar o mesmo payload que foi utilizado pela aplicação e reutilizar o payload para um produto diferente, podendo alterar o usuario criado ou outras informações
+- Impacto (para o negócio / usuários): Usuario malicioso pode se passar por um usuario legitimo e gerar impacto na organização ou terceiros
+- Possíveis mitigações: Controle de acesso aplicado tambem no lado do servidor
 
 ### 3.2 Vulnerabilidade #2
 
-- Endpoint / funcionalidade:
-- Como foi descoberta:
-- Categoria OWASP:
-- Payload / passo a passo:
-- Impacto:
-- Possíveis mitigações:
+- Endpoint / funcionalidade: Busca de produtos
+- Como foi descoberta: Analisando caixas de texto na aplicação
+- Categoria OWASP: A03
+- Payload / passo a passo: Inserir payload malicioso no prompt de "search" 
+- Impacto: Usuarios legitimos podem ver as alterações causadas por usuarios maliciosos
+- Possíveis mitigações: Sanitização dos dados inseridos
 
 ### 3.3 Vulnerabilidade #3
 
-(Repita a estrutura acima para quantas vulnerabilidades forem obrigatórias no enunciado do lab.)
+- Endpoint / funcionalidade: Diretório FTP da aplicação
+- Como foi descoberta: Procurando o robots.txt
+- Categoria OWASP: A05
+- Payload / passo a passo: No robots.txt, verificar a url que está "escondida" e assim acessar e explorar seu conteúdo
+- Impacto: Arquivos da aplicação sensíveis podem ser vistos pelos usuários
 
----
 
 ## 4. Conexão com o CareOps+
 
